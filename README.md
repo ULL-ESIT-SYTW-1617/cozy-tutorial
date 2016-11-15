@@ -1,4 +1,4 @@
-## Sqlite
+## ExpressJS - Sqlite Example
 
 ### Ejemplo de una tabla simple en Sqlite (bookmarks)
 
