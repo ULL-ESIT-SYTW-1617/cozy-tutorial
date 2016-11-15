@@ -8,7 +8,8 @@ var http = require('http'),
 /* We add configure directive to tell express to use Jade to
    render templates */
 app.set('views', __dirname + '/public');
-app.engine('.html', require('jade').__express);
+//app.engine('.html', require('pug').__express);
+app.engine('pug', require('pug').__express);
 
 // Allows express to get data from POST requests
 app.use(bodyParser.urlencoded({
@@ -44,7 +45,7 @@ app.get('/', function(req, res) {
             res.status(500).send("An error has occurred -- " + err);
         }
         else {
-            res.render('index.jade', {bookmarks: row}, function(err, html) {
+            res.render('index.pug', {bookmarks: row}, function(err, html) {
                 res.status(200).send(html);
             });
         }
