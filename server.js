@@ -7,7 +7,6 @@ var express = require('express'),
 /* We add configure directive to tell express to use Pug to
    render templates */
 app.set('views', __dirname + '/views');
-//app.engine('.html', require('pug').__express);
 app.engine('pug', require('pug').__express);
 
 // Allows express to get data from POST requests
@@ -80,7 +79,7 @@ app.get('/delete/:id', function(req, res) {
     });
 });
 
-/* This will allow Cozy to run your app smoothly but
+/* This will allow to run your app smoothly but
  it won't break other execution environment */
 var port = process.env.PORT || 9250;
 var host = process.env.HOST || "127.0.0.1";
