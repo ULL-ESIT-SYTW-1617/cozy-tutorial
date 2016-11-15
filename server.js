@@ -5,7 +5,7 @@ var http = require('http'),
     bodyParser = require('body-parser'),
     db = new sqlite3.Database('cozy');
 
-/* We add configure directive to tell express to use Jade to
+/* We add configure directive to tell express to use Pug to
    render templates */
 app.set('views', __dirname + '/public');
 //app.engine('.html', require('pug').__express);
