@@ -7,7 +7,7 @@ var http = require('http'),
 
 /* We add configure directive to tell express to use Pug to
    render templates */
-app.set('views', __dirname + '/public');
+app.set('views', __dirname + '/views');
 //app.engine('.html', require('pug').__express);
 app.engine('pug', require('pug').__express);
 
