@@ -1,5 +1,4 @@
-var http = require('http'),
-    express = require('express'),
+var express = require('express'),
     app = express(),
     sqlite3 = require('sqlite3').verbose(),
     bodyParser = require('body-parser'),
@@ -36,6 +35,8 @@ db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='bookmarks'",
         console.log("SQL Table 'bookmarks' already initialized.");
     }
 });
+
+db.on('trace', (m)=> console.log(`Running query: ${m}`));
 
 // We render the templates with the data
 app.get('/', function(req, res) {
@@ -85,7 +86,7 @@ var port = process.env.PORT || 9250;
 var host = process.env.HOST || "127.0.0.1";
 
 // Starts the server itself
-var server = http.createServer(app).listen(port, host, function() {
+app.listen(port, function() {
     console.log("Server listening to %s:%d within %s environment",
                 host, port, app.get('env'));
 });
