@@ -1,5 +1,5 @@
 doctype html
-html(lang="fr")
+html(lang="es")
   head
     title My Own Bookmarks
 
@@ -19,6 +19,6 @@ html(lang="fr")
             li
                 a(href=bookmarks[bookmark].url)= bookmarks[bookmark].title
                 | &nbsp;- (
-                a(href="delete/#{bookmarks[bookmark].id}") delete
+                a(href="delete/"+bookmarks[bookmark].id) delete
                 | )
         - }
